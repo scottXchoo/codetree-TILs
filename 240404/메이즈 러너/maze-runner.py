@@ -122,15 +122,16 @@ while c_time < K:
             r, c = cand_set[idx]
             move(r, c, idx)
 
+    # 모든 참가자들 탈출 시, break
+    if len(cand_set) == 0:
+        break
+
     # rectangle() : 가장 작은 정사각형 구하기
     point_r, point_c, length = rectangle()
 
     # rotation() : 정사각형을 시계방향으로 90도 회전
     rotation(point_r, point_c, length)
 
-    # 모든 참가자들 탈출 시, break
-    if len(cand_set) == 0:
-        break
     c_time += 1
 
 # 정답 제출
